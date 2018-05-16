@@ -1,0 +1,32 @@
+<div class="container spacer">
+
+    <div class="panel panel-primary">
+    <div class="panel-heading">Liste Contacts</div>  
+    <div class="panel-body"> 
+        <div class="form-group">
+<label>mot clé</label>
+<input type="text" [(ngModel)]="motcle"/>
+<button class="btn btn-primary" (click)="chercher()">chercher</button>
+        </div>
+       <table class="table">
+<tr>
+    <th>nom</th>
+    <th>email</th>
+    <th>Edit</th>
+</tr>
+
+<tr *ngFor="let c of pageContacts?.content">
+    <td>{{c.nom}}</td>
+    <td>{{c.email}}</td>
+    <td>
+            <button class="btn btn-primary" (click)="onEditContact(c.id)">Edit</button>
+      </td>
+      <td>
+            <button class="btn btn-primary" (click)="ondeleteContact(c)">Delete</button>
+      </td>
+</tr>
+       </table>
+        </div>
+    </div>
+    </div>
+    
